@@ -36,17 +36,6 @@ make check     # lint/format gate (run before committing)
 
 Tag-triggered releases. No auto-release on merge to main.
 
-### PyPI trusted publisher
-
-Configure the existing `contourrs` project at https://pypi.org/manage/project/contourrs/settings/publishing/:
-
-- Owner: `taylor-geospatial`
-- Repository: `contourrs`
-- Workflow: `publish.yml`
-- Environment: `release`
-
-These values must match `.github/workflows/publish.yml`. Add the new publisher before removing the old `isaaccorley` publisher.
-
 ### Steps
 
 1. Bump version in **both** `Cargo.toml` (workspace) and `pyproject.toml`
