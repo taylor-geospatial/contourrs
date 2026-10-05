@@ -1,7 +1,7 @@
 # Performance
 
 These historical measurements predate the current dependency and algorithm updates and have not been rerun for this revision.
-The numbers below were collected on `Linux x86_64`, `Intel i7-10700K`, release build, `Python 3.13.5`, and `NumPy 2.4.2`. Reproduce with [`scripts/benchmark.py`](https://github.com/isaaccorley/contourrs/blob/main/scripts/benchmark.py).
+The numbers below were collected on `Linux x86_64`, `Intel i7-10700K`, release build, `Python 3.13.5`, and `NumPy 2.4.2`. Reproduce with [`scripts/benchmark.py`](https://github.com/taylor-geospatial/contourrs/blob/main/scripts/benchmark.py).
 
 For a new run, save measurements and environment versions with `uv run python scripts/benchmark.py --output results.json`.
 Use `--measure-process-rss` to include retained process RSS measurements.

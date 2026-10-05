@@ -19,7 +19,7 @@ Pre-built wheels are available for Linux, macOS, and Windows on Python 3.12+.
 ## Development setup
 
 ```bash
-git clone https://github.com/isaaccorley/contourrs.git
+git clone https://github.com/taylor-geospatial/contourrs.git
 cd contourrs
 uv sync --extra dev
 uv run maturin develop --release

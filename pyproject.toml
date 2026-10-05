@@ -12,6 +12,11 @@ license = "Apache-2.0"
 license-files = ["LICENSE"]
 dependencies = ["numpy>=2.5.3,<3", "pyarrow>=25.0.1,<26"]
 
+[project.urls]
+Documentation = "https://research.taylorgeospatial.org/contourrs/"
+Repository = "https://github.com/taylor-geospatial/contourrs"
+Issues = "https://github.com/taylor-geospatial/contourrs/issues"
+
 [project.optional-dependencies]
 test = ["rasterio>=1.5.1,<2", "shapely>=2.1.2,<3", "pytest>=9.1.1,<10"]
 examples = ["contourrs[docs]", "torchgeo>=0.10.0,<0.11"]

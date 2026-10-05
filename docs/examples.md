@@ -193,7 +193,7 @@ The TorchGeo tutorial is converted without execution because it requires model w
 | [Tiled CDL Polygonization](tutorials/cdl_tiled_polygonize.md) | Tile-based polygonization, cross-tile merge, and side-by-side visualization |
 | [TorchGeo FTW Polygonize](tutorials/torchgeo_ftw_polygonize.md) | Run a segmentation model and polygonize field boundaries |
 
-All notebook source files live in [`examples/`](https://github.com/isaaccorley/contourrs/tree/main/examples).
+All notebook source files live in [`examples/`](https://github.com/taylor-geospatial/contourrs/tree/main/examples).
 
 ## Figure sources
 

@@ -1,8 +1,8 @@
 site_name: contourrs
-site_url: https://isaac.earth/contourrs/
+site_url: https://research.taylorgeospatial.org/contourrs/
 site_description: Fast raster polygonization and contouring in Rust with Python bindings
-repo_url: https://github.com/isaaccorley/contourrs
-repo_name: isaaccorley/contourrs
+repo_url: https://github.com/taylor-geospatial/contourrs
+repo_name: taylor-geospatial/contourrs
 
 theme:
   name: material

@@ -1,6 +1,6 @@
 # contourrs
 
-<img src="https://raw.githubusercontent.com/isaaccorley/contourrs/main/assets/logo.png" alt="contourrs — a coral contour island inside a charcoal outline" width="600">
+<img src="https://raw.githubusercontent.com/taylor-geospatial/contourrs/main/assets/logo.png" alt="contourrs — a coral contour island inside a charcoal outline" width="600">
 
 [![PyPI](https://img.shields.io/pypi/v/contourrs)](https://pypi.org/project/contourrs/)
 [![DOI](https://zenodo.org/badge/1171138064.svg)](https://doi.org/10.5281/zenodo.22949665)
@@ -9,7 +9,7 @@ contourrs converts NumPy rasters into polygons with a Rust core and Python bindi
 Use it to trace land-cover classes and segmentation masks, or extract filled contour bands from elevation and probability grids.
 The Python package requires no GDAL installation.
 
-[Documentation](https://isaac.earth/contourrs/) · [API reference](https://isaac.earth/contourrs/api/) · [PyPI](https://pypi.org/project/contourrs/) · [Benchmarks](https://isaac.earth/contourrs/performance/)
+[Documentation](https://research.taylorgeospatial.org/contourrs/) · [API reference](https://research.taylorgeospatial.org/contourrs/api/) · [PyPI](https://pypi.org/project/contourrs/) · [Benchmarks](https://research.taylorgeospatial.org/contourrs/performance/)
 
 ## Install
 
@@ -41,7 +41,7 @@ Use `connectivity=8` to join regions that touch diagonally.
 Like `rasterio.features.shapes`, each result pairs a GeoJSON geometry dictionary with its raster value.
 `shapes()` returns a list rather than an iterator.
 
-![USDA Cropland Data Layer raster and extracted polygons](https://raw.githubusercontent.com/isaaccorley/contourrs/main/assets/cdl_polygonize.png)
+![USDA Cropland Data Layer raster and extracted polygons](https://raw.githubusercontent.com/taylor-geospatial/contourrs/main/assets/cdl_polygonize.png)
 
 *A 512 × 512 crop of the 2023 USDA Cropland Data Layer for Polk County, Iowa.
 The right panel shows polygons extracted in tiles and merged across tile boundaries.*
@@ -60,7 +60,7 @@ pq.write_table(table, "polygons.parquet")
 ```
 
 The table includes GeoParquet metadata.
-An affine transform sets output coordinates, but the CRS remains unknown until you assign it; see [georeferenced export](https://isaac.earth/contourrs/api/#coordinate-reference-systems).
+An affine transform sets output coordinates, but the CRS remains unknown until you assign it; see [georeferenced export](https://research.taylorgeospatial.org/contourrs/api/#coordinate-reference-systems).
 
 ## Extract contour bands
 
@@ -81,7 +81,7 @@ bands = contours(elevation, thresholds=[0.1, 0.3, 0.5, 0.7, 1.0])
 This extracts the bands `[0.1, 0.3)`, `[0.3, 0.5)`, `[0.5, 0.7)`, and `[0.7, 1.0)`.
 Values outside those intervals are excluded.
 
-![A synthetic elevation field and its interpolated contour bands](https://raw.githubusercontent.com/isaaccorley/contourrs/main/assets/contours.png)
+![A synthetic elevation field and its interpolated contour bands](https://raw.githubusercontent.com/taylor-geospatial/contourrs/main/assets/contours.png)
 
 *Interpolated bands from a synthetic terrain with three peaks.
 The raster and filled bands share a color scale; white areas fall below the first threshold.*
@@ -113,25 +113,25 @@ table = shapes_arrow(
 - Accepted dtypes are `uint8`, `uint16`, `uint32`, `int16`, `int32`, `float32`, and `float64`.
 
 Polygonization follows pixel edges; contours interpolate between samples at integer `(column, row)` coordinates.
-See the [coordinate conventions](https://isaac.earth/contourrs/api/#contour-coordinates) when applying a raster transform.
+See the [coordinate conventions](https://research.taylorgeospatial.org/contourrs/api/#contour-coordinates) when applying a raster transform.
 Read raster files with rasterio or another loader, then pass the arrays to contourrs.
 
 ## Tutorials
 
-- [Quickstart](https://isaac.earth/contourrs/tutorials/quickstart/) covers masks, transforms, and both output formats.
-- [DEM contours](https://isaac.earth/contourrs/tutorials/dem_contour/) extracts elevation bands from synthetic terrain and a Mount Rainier DEM.
-- [Tiled CDL polygonization](https://isaac.earth/contourrs/tutorials/cdl_tiled_polygonize/) polygonizes land cover in tiles and merges their boundaries.
-- [TorchGeo field segmentation](https://isaac.earth/contourrs/tutorials/torchgeo_ftw_polygonize/) converts Fields of the World model predictions into field polygons.
+- [Quickstart](https://research.taylorgeospatial.org/contourrs/tutorials/quickstart/) covers masks, transforms, and both output formats.
+- [DEM contours](https://research.taylorgeospatial.org/contourrs/tutorials/dem_contour/) extracts elevation bands from synthetic terrain and a Mount Rainier DEM.
+- [Tiled CDL polygonization](https://research.taylorgeospatial.org/contourrs/tutorials/cdl_tiled_polygonize/) polygonizes land cover in tiles and merges their boundaries.
+- [TorchGeo field segmentation](https://research.taylorgeospatial.org/contourrs/tutorials/torchgeo_ftw_polygonize/) converts Fields of the World model predictions into field polygons.
 
-Notebook sources are in [`examples/`](https://github.com/isaaccorley/contourrs/tree/main/examples).
-[Performance notes](https://isaac.earth/contourrs/performance/) describe the benchmark inputs, output costs, and memory measurements.
+Notebook sources are in [`examples/`](https://github.com/taylor-geospatial/contourrs/tree/main/examples).
+[Performance notes](https://research.taylorgeospatial.org/contourrs/performance/) describe the benchmark inputs, output costs, and memory measurements.
 
 ## Development
 
 Install [uv](https://docs.astral.sh/uv/) and [Rust](https://rustup.rs/), then:
 
 ```bash
-git clone https://github.com/isaaccorley/contourrs.git
+git clone https://github.com/taylor-geospatial/contourrs.git
 cd contourrs
 make install
 make test
@@ -141,11 +141,11 @@ make check
 Run `make build` after changing Rust code.
 The checks include Rust formatting and Clippy, Ruff, ty, Pyrefly, and the Rust test suite.
 `make test` also runs the Python tests, including comparisons against rasterio.
-See [development and docs setup](https://isaac.earth/contourrs/getting-started/#development-setup) and the [Rust architecture](https://isaac.earth/contourrs/architecture/) for more.
+See [development and docs setup](https://research.taylorgeospatial.org/contourrs/getting-started/#development-setup) and the [Rust architecture](https://research.taylorgeospatial.org/contourrs/architecture/) for more.
 
 ## License
 
-[Apache-2.0](https://github.com/isaaccorley/contourrs/blob/main/LICENSE).
+[Apache-2.0](https://github.com/taylor-geospatial/contourrs/blob/main/LICENSE).
 
 ## Citation
 
